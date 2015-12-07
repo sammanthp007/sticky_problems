@@ -171,6 +171,28 @@ class BinarySearchTree(object):
         self.preorder_traversal_from(root.left_child)
         self.preorder_traversal_from(root.right_child)
     
+    def goldman_sachs_traversal(self):
+        this_node = self.root
+        self.goldman_traversal_from(this_node)
+        print ()
+
+    def goldman_traversal_from(self, root):
+        stack = Stack()
+        queue = Queue()
+        queue.enqueue(root)
+        while queue.size:
+            front = queue.dequeue()
+            if front.right_child:
+                queue.enqueue(front.right_child)
+            if front.left_child:
+                queue.enqueue(front.left_child)
+            # print ('>>',front.data)
+            stack.push(front)
+            # print (stack)
+        while stack.size:
+            res = stack.pop()
+            print (res.data, end=' ')
+
 def is_bst(root):
     return check_is_bst(root, float('inf'), float('-inf'))
 
@@ -180,8 +202,31 @@ def check_is_bst(root, max_val, min_val):
     if root.data <= max_val and root.data > min_val and is_bst(root.left_child, root.data, min_val) and is_bst(root.right_child, max_val, root.data):
         return True
     return False
-    
-    
+
+
+class Stack(object):
+    def __init__(self):
+        self.head = None
+        self.size = 0
+
+    def push(self, d):
+        new_node = NodeType(d)
+        new_node.next_node = self.head
+        self.head = new_node
+        self.size += 1
+        # print (self.head.data)
+
+    def pop(self):
+        pop_data = self.head.data
+        self.head = self.head.next_node
+        # print (self.head.data)
+        self.size -= 1
+        return pop_data
+
+    def peek(self):
+        return self.head.data
+
+
 # b = BinarySearchTree()
 # b.insert(15)
 # b.insert(5)
@@ -196,6 +241,7 @@ def check_is_bst(root, max_val, min_val):
 # b.insert(18)
 # b.insert(23)
 # b.breadth_first_traversal()
+# b.goldman_sachs_traversal()
 # b.inorder_traversal()
 # b.postorder_traversal()
 # b.preorder_traversal()
