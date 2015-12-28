@@ -25,3 +25,8 @@ t9letters = {null, null, {'a', 'b', 'c'}, {'d', 'e', 'f'}, {'g','h','i'}, {'j','
 
 print getvalidT9words("8733", setwordlist)
 setwordlist = {"tree", "used", "prek""shak", "interview", "ok"}
+
+# Problem 6.3 : For each of the following, A is an integer array of length n.
+# (1.) Compute the maximum value of (A[j0] − A[i0]) + (A[j1] − A[i1]), subject to i 0 < j 0 < i 1 < j 1 .
+# (2.) Compute the maximum value of Submission(k−1 t=0) (A[jt ] − A[it]), subject to i 0 < j 0 < i 1 < j 1 <···< i k−1 < j k−1 . Here k is a fixed input parameter.
+# (3.) Repeat Problem (2.) when k can be chosen to be any value from 0 to n/2.
