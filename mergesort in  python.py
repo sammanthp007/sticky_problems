@@ -1,9 +1,6 @@
 lst = [3,5,7,3,1,3,2,45,78, 22, 16, 4]
 
 def merger(left_lst, right_lst):
-    i = 0
-    j = 0
-    res = []
     if not left_lst:
         return right_lst
     if not right_lst:
