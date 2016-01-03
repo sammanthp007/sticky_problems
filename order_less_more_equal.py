@@ -23,6 +23,6 @@ def order(lis, index):
 def swap(lis, a, b):
     lis[a], lis[b] = lis[b], lis[a]
 
-lis = [3,2,6,2,7,4,8,2,25,4,6,8,9]
-order(lis, 5)
+lis = [3,4,2,6,2,7,4,8,2,25,4,6,8,9]
+order(lis, 6)
 print (lis)
