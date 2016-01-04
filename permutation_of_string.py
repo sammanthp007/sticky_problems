@@ -1,26 +1,22 @@
-lis = []
-def permutation_string(string):
+def permutation_of_string(string):
+    # take the last characte of the string, chopp it off and find the pemutation of the string without the last string. 
+    # Then put the last string in all positions of the smaller words permutation.
+    # the output
+    result = []
     if len(string) == 0:
-        return -1
+        return
     if len(string) == 1:
         return [string]
-    # for everthing else : get 
-    return list(merge(string[0], permutation_string(string[1:])))
+    # chop off the last character
+    last = string[-1]
+    # find the permutation of the smaller string
+    perms = permutation_of_string(string[:-1])
+    # put the last character in every place
+    for words in perms:
+        for index in range(len(words) + 1):
+            result.append(words[:index] + last + words[index:])
+    return result
 
-def merge(character, arr):
-    array = set() # make this the same list as lis, for space complexity
-    for string in arr:
-        index = 0
-        while index <= len(arr):
-            array.add(merge_util(character, string, index)) # gives a different type of string
-            index += 1
-    return array
-    
-def merge_util(character, string, index):
-    return string[:index] + character + string[index:]
-    
-# working:
-# fis -> 3 * 2 = 6
 
-p = permutation_string('sam')
+p = permutation_of_string("sau")
 print (p, len(p))
