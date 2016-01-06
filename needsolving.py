@@ -30,3 +30,9 @@ setwordlist = {"tree", "used", "prek""shak", "interview", "ok"}
 # (1.) Compute the maximum value of (A[j0] − A[i0]) + (A[j1] − A[i1]), subject to i 0 < j 0 < i 1 < j 1 .
 # (2.) Compute the maximum value of Submission(k−1 t=0) (A[jt ] − A[it]), subject to i 0 < j 0 < i 1 < j 1 <···< i k−1 < j k−1 . Here k is a fixed input parameter.
 # (3.) Repeat Problem (2.) when k can be chosen to be any value from 0 to n/2.
+
+
+# Numbers are randomly generated and stored into an (expanding) array. How would you keep track of the median?
+
+# What was the hardest bug in a specific project or what was the hardest bug you have ever come across?
+
