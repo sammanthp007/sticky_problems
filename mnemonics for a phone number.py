@@ -43,7 +43,7 @@ def get_phone_pnemonic(num, lis):
         return lis
             
 lis = []
-print (get_phone_pnemonic(234, lis))
+# print (get_phone_pnemonic(234, lis))
 # <<<<<<<<<<<<<<<<<<<<<<<<< end of original approach >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # shorter solution, similar approach:
 

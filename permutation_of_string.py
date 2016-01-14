@@ -18,5 +18,5 @@ def permutation_of_string(string):
     return result
 
 
-p = permutation_of_string("sau")
+p = permutation_of_string("saur")
 print (p, len(p))
