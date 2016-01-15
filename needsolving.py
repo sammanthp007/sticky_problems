@@ -34,5 +34,4 @@ setwordlist = {"tree", "used", "prek""shak", "interview", "ok"}
 
 # Numbers are randomly generated and stored into an (expanding) array. How would you keep track of the median?
 
-# What was the hardest bug in a specific project or what was the hardest bug you have ever come across?
 

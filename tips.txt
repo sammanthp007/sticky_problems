@@ -1,0 +1,11 @@
+notes:
+
+1) If sorted list then see if we can make use of binary search
+
+2) if binary tree:
+    a) See if there is any property of a binary tree we can make use of
+    b) See how to approach theoritically
+
+3) if binary search tree:
+    a) See if there are any properties of a binary search tree we can make use of
+    b) See  
