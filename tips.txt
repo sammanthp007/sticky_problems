@@ -4,8 +4,8 @@ notes:
 
 2) if binary tree:
     a) See if there is any property of a binary tree we can make use of
-    b) See how to approach theoritically
+    b) See how to approach theoritically, don't start writing code at all until you are 100% sure of it.
 
 3) if binary search tree:
     a) See if there are any properties of a binary search tree we can make use of
-    b) See  
+    b) Look at it from a normal eye, talk through it. Just make sure that you get to a clear solution with no problem before even thinking about writing code.
