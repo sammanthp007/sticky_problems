@@ -9,3 +9,8 @@ notes:
 3) if binary search tree:
     a) See if there are any properties of a binary search tree we can make use of
     b) Look at it from a normal eye, talk through it. Just make sure that you get to a clear solution with no problem before even thinking about writing code.
+
+4) Stacks are used for inversing a data structure:
+
+5) Queues are used to make traversing easier and managed, we can manage the wau to traverse through a queue
+

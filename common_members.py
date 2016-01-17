@@ -14,12 +14,14 @@ def get_common_member_using_dictionary(list1, list2):
 			list1_dic[item] = 1
 
 	for item in list2:
-		val = list1_dic.get(item, 0)
-		if val:
-			result.append(val)
+		# val = list1_dic.get(item, 0)
+		if item in list1_dic:
+			result.append(item)
 		else:
 			continue
 	return result
+
+print (get_common_member_using_dictionary(list1, list2))
 
 def get_common_member_using_set(list1, list2):
 	set1 = {item for item in list1}
@@ -28,4 +30,4 @@ def get_common_member_using_set(list1, list2):
 	common_list = [item for item in common_items]
 	return (common_list)
 
-print (get_common_member_using_set(list1, list2))
+# print (get_common_member_using_set(list1, list2))

@@ -27,6 +27,6 @@ class Solution:
     def numSetBits(self, A):
         res = 0
         while A > 0:
-            A = A & (A - 1)
+            A ^= A & (~(A - 1))
             res += 1
         return res

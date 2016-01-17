@@ -16,5 +16,5 @@ def single_number_xor(lis):
         res ^= item
     return res
 
-# print (single_number_xor(lis))
+print (single_number_xor(lis))
 
