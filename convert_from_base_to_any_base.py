@@ -25,4 +25,4 @@ def convert_decimal_to_base(string, base):
 def convert_base(string, b1, b2):
     return convert_decimal_to_base(convert_to_base10(string, b1), b2)
 
-print (convert_base('334', 5, 8))
+print (convert_base('32', 10, 2))
