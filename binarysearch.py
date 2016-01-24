@@ -25,24 +25,21 @@ def BinarySearch(lis, key):
     # return a boolean value
     
 # binary search iteratively
-def BinarySearchIterative(lis, key):
-    last = len(lis) - 1
-    first = 0
-    while first <= last:
-        mid = (first + last) // 2
-        if len(lis) == 0:
-            return False
-        if len(lis) == 1:
-            if lis[0] == key:
-                return True
-            return False
-        if lis[mid] == key:
-            return True
-        elif lis[mid] < key:
-            first = mid + 1
-        else:
-            last = mid - 1
-    return False
+def binary_search(lis, num):
+    top = len(lis)
+    bottom = 0
+    while bottom < top:
+        middle = (top + bottom) // 2
+        if lis[middle] == num:
+            return middle
+        elif lis[middle] < num:
+            bottom = middle
+        elif lis[middle] > num:
+            top = middle
+    return -1
+
+lis = [2,4,6,7,9,23,35,56,67,78]
+print (binary_search([], 67))
 
 lis = [2,5,7,8,9,23,54,76,79,89]
 # print (BinarySearchIterative(lis,54))
