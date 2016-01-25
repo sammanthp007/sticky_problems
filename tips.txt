@@ -12,5 +12,5 @@ notes:
 
 4) Stacks are used for inversing a data structure:
 
-5) Queues are used to make traversing easier and managed, we can manage the wau to traverse through a queue
+5) Queues are used to make traversing easier and managed, we can manage the way to traverse through a queue
 

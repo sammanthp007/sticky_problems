@@ -43,3 +43,22 @@ print (binary_search([], 67))
 
 lis = [2,5,7,8,9,23,54,76,79,89]
 # print (BinarySearchIterative(lis,54))
+
+
+def binary_search(lis,n,l,h):
+    if len(lis) == 0:
+        return -1
+    elif len(lis) == 1:
+        if lis[0] == n:
+            return 0
+        return -1
+    middle = (l + h) // 2
+    if n == lis[middle]:
+        return middle
+    elif n > lis[middle]:
+        return binary_search(lis, n, middle + 1, h)
+    else:
+        return binary_search(lis, n, l, middle - 1)
+
+lis = [2,3,4,5,6,7,8,23,45,65,67,87]
+print (binary_search(lis, 67, 0, len(lis) - 1))
