@@ -1,0 +1,106 @@
+# You are to evaluate the responses you would get from asking multiple people to retrieve a web address for a company, and confirm a level of agreement across
+ # the submissions. 
+
+# Assume you are given an array of web addresses as strings: e.g. ['www.website.com', 'http://website.com/happyhour', 'differentwebsite.com', 
+ # 'http://www.google.com/]. The array can contain anywhere between 3 and 9 entries. Please return the maximum % of the entries that point to the same domain. 
+# (In the example above, it should be 50%, since the first 2 point to the same website and 2/4 is 50%. Please handle the presence or absence of http:// and h
+ # ttps:// and ignore subdomains (/happyhour doesn't matter in the second entry in the example). 
+
+# Clarifications:
+# •'www.website.com' and 'website.com' are equivalent
+# •'http://website.com' and 'https://www.website.com' and equivalent
+# •'www.website.com/' and http://www.website.com/subpage' are equivalent
+# •'www.website.com' and 'www.website.net' are NOT equivalent
+
+# Feel free to write the code using any language you want and take your time. Please try to get back to me within the next week and let me know if you have
+# any questions!
+
+def max_percent_from_list(lis):
+    if len(lis) == 0:
+        return -1
+    sites = {}
+    for site in lis:
+        each = broken_site(site)
+        if each in sites:
+            sites[each] += 1
+        else:
+            sites[each] = 1
+    highest = 0
+    total = 0
+    print (sites)
+    for v in sites.values():
+        if v > highest:
+            highest = v
+        total += v
+    if -1 in sites and len(sites.keys()) == 1:
+        return 'Invalid'
+    return (highest / total) * 100
+        
+def broken_site(site):
+    current = site
+    # edge case: if the site is not a string
+    if not type(site) == str:
+        return -1
+    # edge case: if its just a word and not a site
+    if site.find('.') == -1:
+        return -1 
+    # get the protocol
+    pos = current.find('://')
+    if pos == -1 or pos >= 2:
+        if pos == -1:
+            protocol = "http"
+        else:
+            protocol = site[:pos]
+            if protocol == 'https':
+                protocol = 'http'
+            current = current[pos+3:]
+    # get the sub domain name
+    sub_domain = 'www'
+    if current.startswith('www.'):
+        current = current[4:]
+    # get top domain name
+    pos = current.find('/')
+    top_domain = ''
+    if pos != -1:
+        for i in range(5):
+            if current[pos - i] == '.':
+                dot = pos - i
+                break
+            top_domain = current[pos - i] + top_domain
+        top_domain = top_domain[:-1]
+    elif pos == -1:
+        dot = len(current) - 1
+        for i in current[::-1]:
+            if i == '.':
+                end = i
+                break
+            dot -= 1
+            top_domain = i + top_domain
+    # get domain
+    domain = current[:dot]
+    # get file path
+    file_path = ''
+    if len(current) > dot + 1:
+        a = len(top_domain)
+        file_path = current[dot + a + 2:]
+    return(protocol, sub_domain, domain, top_domain)
+
+# Test Cases:
+lis = ['www.website.com', 'http://website.com/happyhour', 'differentwebsite.com', 'http://www.google.com/', 'google.com', 'website.com', 'https://www.website.com', 'http://www.website.com/subpage','www.website.net']
+
+# lis = ['www.website.com', 'http://website.com/happyhour', 'differentwebsite.com', 'http://www.google.com/']
+
+# lis = []
+
+# lis = ['webite.com']
+
+# lis = ['asdsad', 'er.sc']
+
+# lis = ['asd']
+
+# lis = [2]
+
+
+# EXECUTION
+print(max_percent_from_list(lis), end='')
+# print('%')
